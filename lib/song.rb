@@ -11,13 +11,13 @@ class Song
   end
 
   def self.create
-    song = Song.new
+    song = Song.new #song = self.new
     song.save
     return song
   end
 
   def self.new_by_name(name)
-    song = Song.new()
+    song = Song.new()  #song = self.create
     song.name = name
     return song
   end
@@ -41,6 +41,7 @@ class Song
     else
       self.create_by_name(name)
     end
+    # find_by_name(name) || create_by_name(name)
   end
 
   def self.alphabetical
@@ -69,7 +70,7 @@ class Song
   end
 
   def self.destroy_all
-    @@all.clear
+    @@all.clear #self.all.clear
   end
 
   
